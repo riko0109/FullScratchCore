@@ -55,7 +55,7 @@ namespace FullScratchCore.ViewModels
 
         private void FilePathChanged(object sender)
         {
-            FullPath = ((CustomListViewModel)sender).SelectedListItem?.FullName;
+            FullPath = ((CustomListViewModel)sender).SelectedListItem?.FullPath;
         }
     }
 }

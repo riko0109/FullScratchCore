@@ -1,4 +1,5 @@
 ﻿<UserControl x:Class="FullScratchCore.Views.CustomList"
+             x:Name="CustomListView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -22,8 +23,8 @@
                 <Setter Property="ContextMenu" >
                     <Setter.Value>
                         <ContextMenu>
-                            <MenuItem Header="Open" Command="{Binding ExecuteCmd,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Static vm:CustomListViewModel}}}"
-                                                    CommandParameter="{Binding DataContext.SelectedListItem.FullName,RelativeSource={RelativeSource FindAncestor,AncestorType=UserControl}}"/>
+                            <MenuItem Header="Open" Command="{Binding ExecuteCmd}"
+                                                    CommandParameter="{Binding SelectedListItem.FullPath}"/>
                         </ContextMenu>
                     </Setter.Value>
                 </Setter>
@@ -31,19 +32,19 @@
         </ListView.Resources>
         <ListView.View>
             <GridView>
-                <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="Auto">
+                <GridViewColumn DisplayMemberBinding="{Binding FileName}" Width="Auto">
                     <GridViewColumnHeader Content="Name" HorizontalContentAlignment="Stretch"/>
                 </GridViewColumn>
-                <GridViewColumn DisplayMemberBinding="{Binding Extension}" Width="Auto">
+                <GridViewColumn DisplayMemberBinding="{Binding Extention}" Width="Auto">
                     <GridViewColumnHeader Content="Extension" HorizontalContentAlignment="Stretch"/>
                 </GridViewColumn>
-                <GridViewColumn DisplayMemberBinding="{Binding CreationTimeUtc}" Width="Auto">
+                <GridViewColumn DisplayMemberBinding="{Binding CreationTime}" Width="Auto">
                     <GridViewColumnHeader Content="CreationTime" HorizontalContentAlignment="Stretch"/>
                 </GridViewColumn>
-                <GridViewColumn DisplayMemberBinding="{Binding LastAccessTimeUtc}" Width="Auto">
+                <GridViewColumn DisplayMemberBinding="{Binding LastUpdateTime}" Width="Auto">
                     <GridViewColumnHeader Content="LastAccessTime" HorizontalContentAlignment="Stretch"/>
                 </GridViewColumn>
-                <GridViewColumn DisplayMemberBinding="{Binding Length,Converter={StaticResource ByteSIConverter}}" Width="Auto">
+                <GridViewColumn DisplayMemberBinding="{Binding FileSize,Converter={StaticResource ByteSIConverter}}" Width="Auto">
                     <GridViewColumnHeader Content="Size" HorizontalContentAlignment="Stretch"/>
                 </GridViewColumn>
             </GridView>

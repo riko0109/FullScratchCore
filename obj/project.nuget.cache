@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AMl6Er6igerfGp50l5Alx3WmoohBhK09EyAUM3nO8/eL3MieKJIo9uK7MJMNgUNhauBDnHx8GSQzTLO3VZCKQw==",
+  "dgSpecHash": "erHjRDPO1T4BOmu1rNxQt8W+jf6gjk+58BSpRGLRluR41y02GCNW0KIk7EHtMo86F2KU/7XdEk+jwCOfkkRchQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\H0882\\source\\repos\\FullScrach.Core\\FullScratchCore.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\FullScratchCore\\FullScratchCore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

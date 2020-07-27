@@ -1,4 +1,5 @@
-﻿using FullScratchCore.Models.Command;
+﻿using FullScratchCore.Models;
+using FullScratchCore.Models.Command;
 using FullScratchCore.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -19,8 +20,8 @@ namespace FullScratchCore.ViewModels
         /// <summary>
         /// FileListに表示するオブジェクト
         /// </summary>
-        private ObservableCollection<FileInfo> _FileList { get; set; }
-        public ObservableCollection<FileInfo> FileList
+        private ObservableCollection<FileListItem> _FileList { get; set; } = new ObservableCollection<FileListItem>();
+        public ObservableCollection<FileListItem> FileList
         {
             get
             {
@@ -33,8 +34,8 @@ namespace FullScratchCore.ViewModels
             }
         }
 
-        private FileInfo _SelectedListItem { get; set; }
-        public FileInfo SelectedListItem
+        private FileListItem _SelectedListItem { get; set; }
+        public FileListItem SelectedListItem
         {
             get
             {
@@ -43,28 +44,23 @@ namespace FullScratchCore.ViewModels
             set
             {
                 _SelectedListItem = value;
+                FileListItem.SelectedListItem = _SelectedListItem;
                 if (SelectedListItem != null)
                 {
                     SelectedFileChanged(this);
                 }
-
                 RaisePropertyChanged();
+                RaisePropertyChanged(nameof(_SelectedListItem));
             }
         }
 
-        private ICommand _ExecuteCmd { get; set; }
-        public ICommand ExecuteCmd
+        public string FilePath
         {
             get
             {
-                return _ExecuteCmd;
-            }
-            set
-            {
-                _ExecuteCmd = value;
+                return SelectedListItem.FullPath;
             }
         }
-
 
         /// <summary>
         /// イベントハンドラ
@@ -76,17 +72,20 @@ namespace FullScratchCore.ViewModels
         public CustomListViewModel()
         {
             Models.Directory.OnSelectedChanged += FileListUpdate;
-            this.ExecuteCmd = new OpenFileCmd();
         }
 
         private void FileListUpdate(object sender)
         {
-            try
+            FileList.Clear();
+            foreach (FileInfo f in ((Models.Directory)sender).DirectoryInfo.GetFiles())
             {
-                FileList = new ObservableCollection<FileInfo>(((Models.Directory)sender).DirectoryInfo.GetFiles());
-            }
-            catch
-            {
+                try
+                { 
+                    FileList.Add(new FileListItem(f));
+                }
+                catch
+                {
+                }
             }
         }
 

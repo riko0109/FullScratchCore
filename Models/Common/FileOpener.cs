@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Text;
+using System.Windows;
 
 namespace FullScratchCore.Models.Common
 {
@@ -29,35 +30,49 @@ namespace FullScratchCore.Models.Common
 
             if ((bool)Dialog.ShowDialog())
             {
-                using (StreamReader Reader = new StreamReader(Dialog.FileName, this.EncodingType))
+                try
                 {
-                    var TabViewModel = new CustomTabViewModel();
-                    if (Path.GetExtension(Dialog.FileName) == ".csv")
+                    using (StreamReader Reader = new StreamReader(Dialog.FileName, this.EncodingType))
                     {
-                        TabViewModel.TabAdd(new Models.GridTabItem(Path.GetFileName(Dialog.FileName), Dialog.FileName, this.ControlType));
-                    }
-                    else
-                    {
-                        TabViewModel.TabAdd(new Models.TextTabItem(Path.GetFileName(Dialog.FileName), Reader.ReadToEnd(), this.ControlType));
-                    }
+                        var TabViewModel = new CustomTabViewModel();
+                        if (Path.GetExtension(Dialog.FileName) == ".csv")
+                        {
+                            TabViewModel.TabAdd(new Models.GridTabItem(Path.GetFileName(Dialog.FileName), Dialog.FileName, this.ControlType));
+                        }
+                        else
+                        {
+                            TabViewModel.TabAdd(new Models.TextTabItem(Path.GetFileName(Dialog.FileName), Reader.ReadToEnd(), this.ControlType));
+                        }
 
-                };
+                    };
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
 
             }
         }
 
         public void OpenFile(string filepath)
         {
-            using (StreamReader Reader = new StreamReader(filepath, this.EncodingType))
+            try
             {
+                using (StreamReader Reader = new StreamReader(filepath, this.EncodingType))
+                {
                     if (Path.GetExtension(filepath) == ".csv")
                     {
-                        CustomTabViewModel.Tabs.Add(new Models.GridTabItem(Path.GetFileName(filepath),filepath, this.ControlType));
+                        CustomTabViewModel.Tabs.Add(new Models.GridTabItem(Path.GetFileName(filepath), filepath, Models.TabItemBase.ControlType.CSV));
                     }
                     else
                     {
                         TabViewModel.TabAdd(new Models.TextTabItem(Path.GetFileName(filepath), Reader.ReadToEnd(), this.ControlType));
                     }
+                }
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
             }
         }
     }

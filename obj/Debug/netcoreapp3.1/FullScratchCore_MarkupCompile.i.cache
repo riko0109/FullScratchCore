@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\H0882\source\repos\FullScrach.Core\obj\Debug\netcoreapp3.1\
+C:\Users\Administrator\Desktop\FullScratchCore\obj\Debug\netcoreapp3.1\
 FullScratchCore
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\H0882\source\repos\FullScrach.Core\App.xaml
+C:\Users\Administrator\Desktop\FullScratchCore\App.xaml
 6-1497301837
 
-31-57925832
+331269791504
 1921654412462
 MainWindow.xaml;Views\CustomList.xaml;Views\CustomMenu.xaml;Views\CustomTab.xaml;Views\CustomTextBox.xaml;Views\CustomTree.xaml;
 
-False
+True
 

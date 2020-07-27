@@ -18,7 +18,8 @@
             <!--  テキスト表示用テンプレート  -->
             <DataTemplate x:Key="TextTemplate">
                 <!-- IsAsync=TrueはupdateSourceTriggerをpropertychangedに設定してるとちらつく-->
-                <TextBox Text="{Binding Contents, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="20"/>
+                <TextBox Text="{Binding Contents, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         FontSize="20" Padding="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
             </DataTemplate>
 
             <!--  CSV表示用テンプレート  -->
