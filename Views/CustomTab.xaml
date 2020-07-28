@@ -17,9 +17,17 @@
         <ResourceDictionary>
             <!--  テキスト表示用テンプレート  -->
             <DataTemplate x:Key="TextTemplate">
-                <!-- IsAsync=TrueはupdateSourceTriggerをpropertychangedに設定してるとちらつく-->
-                <TextBox Text="{Binding Contents, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                         FontSize="20" Padding="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle x:Name="TextLine" Fill="AliceBlue" Width="Auto" Height="Auto" Visibility="Visible"/>
+                    <!-- IsAsync=TrueはupdateSourceTriggerをpropertychangedに設定してるとちらつく-->
+                <TextBox x:Name="TextBoxControl" Grid.Column="{Binding ElementName=TextLine,Path=IsVisible}" Grid.ColumnSpan="2" Text="{Binding Contents, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         FontSize="20" Padding="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" BorderThickness="0">
+                </TextBox>
+                </Grid>
             </DataTemplate>
 
             <!--  CSV表示用テンプレート  -->

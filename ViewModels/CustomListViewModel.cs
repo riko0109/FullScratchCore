@@ -77,20 +77,17 @@ namespace FullScratchCore.ViewModels
         private void FileListUpdate(object sender)
         {
             FileList.Clear();
-            foreach (FileInfo f in ((Models.Directory)sender).DirectoryInfo.GetFiles())
-            {
                 try
-                { 
-                    FileList.Add(new FileListItem(f));
+                {
+                     foreach (FileInfo f in ((Models.Directory)sender).DirectoryInfo.GetFiles())
+                     {
+                         FileList.Add(new FileListItem(f));
+                     }
                 }
                 catch
                 {
                 }
-            }
         }
-
-
-
     }
 }
 

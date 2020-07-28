@@ -11,22 +11,34 @@ namespace FullScratchCore.Models
     {
         public TextTabItem(string header, string contents, ControlType Type) : base(header, Type)
         {
+            this.TextBoxInstance = new TextBox();
             this.Header = header;
             this.Contents = contents;
             this.TabType = Type;
             this.TabID = System.Guid.NewGuid().ToString();
         }
 
-        private string _Contents { get; set; }
+        private TextBox TextBoxInstance { get; set; }
+
         public string Contents
         {
             get
             {
-                return _Contents;
+                return TextBoxInstance.Text;
             }
             set
             {
-                _Contents = value;
+                TextBoxInstance.Text = value;
+            }
+        }
+
+       
+
+        public Int32 CaretIndex
+        {
+            get
+            {
+                return TextBoxInstance.CaretIndex;
             }
         }
     }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\FullScratchCore\\FullScratchCore.csproj": {}
+    "C:\\Users\\H0882\\source\\repos\\FullScratchCore\\FullScratchCore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\FullScratchCore\\FullScratchCore.csproj": {
+    "C:\\Users\\H0882\\source\\repos\\FullScratchCore\\FullScratchCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\FullScratchCore\\FullScratchCore.csproj",
+        "projectUniqueName": "C:\\Users\\H0882\\source\\repos\\FullScratchCore\\FullScratchCore.csproj",
         "projectName": "FullScratchCore",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\FullScratchCore\\FullScratchCore.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\FullScratchCore\\obj\\",
+        "projectPath": "C:\\Users\\H0882\\source\\repos\\FullScratchCore\\FullScratchCore.csproj",
+        "packagesPath": "C:\\Users\\H0882\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\H0882\\source\\repos\\FullScratchCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\H0882\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "AvalonEdit": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -47,21 +53,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App": {
+              "privateAssets": "none"
             },
             "Microsoft.WindowsDesktop.App.WPF": {
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
