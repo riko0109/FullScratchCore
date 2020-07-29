@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Collections.ObjectModel;
 
 namespace FullScratchCore.Models
 {
@@ -16,6 +17,11 @@ namespace FullScratchCore.Models
             this.Contents = contents;
             this.TabType = Type;
             this.TabID = System.Guid.NewGuid().ToString();
+
+            for(int i=1;i<=Int16.MaxValue;i++)
+            {
+                LineCount.Add(i);
+            }
         }
 
         private TextBox TextBoxInstance { get; set; }
@@ -32,15 +38,9 @@ namespace FullScratchCore.Models
             }
         }
 
-       
+        public ObservableCollection<int> LineCount { get; set; } = new ObservableCollection<int>();
 
-        public Int32 CaretIndex
-        {
-            get
-            {
-                return TextBoxInstance.CaretIndex;
-            }
-        }
+
     }
 }
 

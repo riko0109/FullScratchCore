@@ -5,6 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mt="clr-namespace:FullScratchCore.Models.Selector"
              xmlns:vm="clr-namespace:FullScratchCore.ViewModels"
+             xmlns:f="clr-namespace:FullScratchCore"
+             xmlns:ae="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:fc="clr-namespace:FullScratchCore"
              xmlns:local="clr-namespace:FullScratchCore.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -17,17 +20,10 @@
         <ResourceDictionary>
             <!--  テキスト表示用テンプレート  -->
             <DataTemplate x:Key="TextTemplate">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="20"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Rectangle x:Name="TextLine" Fill="AliceBlue" Width="Auto" Height="Auto" Visibility="Visible"/>
+                <fc:FullScratchEditor DataContext="TextTabItem" Text="{Binding Path=Contents,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
                     <!-- IsAsync=TrueはupdateSourceTriggerをpropertychangedに設定してるとちらつく-->
-                <TextBox x:Name="TextBoxControl" Grid.Column="{Binding ElementName=TextLine,Path=IsVisible}" Grid.ColumnSpan="2" Text="{Binding Contents, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                         FontSize="20" Padding="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" BorderThickness="0">
-                </TextBox>
-                </Grid>
+                    <!--<TextBox x:Name="TextBoxControl" Grid.Column="{Binding ElementName=TextLine,Path=IsVisible}" Grid.ColumnSpan="2" Text="{Binding Contents, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"-->
+                         <!--FontSize="20" Padding="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" BorderThickness="0" />-->
             </DataTemplate>
 
             <!--  CSV表示用テンプレート  -->
@@ -63,13 +59,7 @@
     <Grid>
         <TabControl x:Name="Tab" ItemsSource="{Binding Tabs, Mode=Twoway,UpdateSourceTrigger=PropertyChanged}" 
                     FontSize="20" VirtualizingPanel.VirtualizationMode="Recycling" SelectedItem="{Binding SelectedTabItem}">
-            <TabControl.Resources>
-                <Style TargetType="TabItem">
-                    <Setter Property="DataContext" Value="{Binding ElementName=Tab,Path=SelectedItem}"/>
-                </Style>
-                      
-            </TabControl.Resources>
-            <TabControl.ItemTemplate>
+                <TabControl.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Header}">
                         <Button Content="×" Command="{Binding ExecuteCmd}" CommandParameter="{Binding TabID}" BorderThickness="0" Background="Transparent"/>

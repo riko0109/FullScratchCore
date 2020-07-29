@@ -1,0 +1,32 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:FullScratchCore"
+    xmlns:v="clr-naemespace:FullScratchCore.Views">
+    
+    <Style TargetType="{x:Type local:FullScratchEditor}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <ScrollViewer>
+                        <DockPanel>
+                              <ListView DockPanel.Dock="Left" Width="40" Background="AliceBlue" BorderThickness="0" Height="Auto">
+                                <ListView.Resources>
+                                    <Style TargetType="ListViewItem">
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    </Style>
+                                </ListView.Resources>
+                                <ListViewItem Content="1"/>
+                                <ListViewItem Content="2"/>
+                                <ListViewItem Content="3"/>
+                                <ListViewItem Content="4"/>
+                            </ListView>
+                                <TextBox Text="{TemplateBinding}" Height="Auto" BorderThickness="0" AcceptsReturn="True" />
+                        </DockPanel>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
