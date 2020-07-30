@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\H0882\source\repos\FullScratchCore\App.xaml
-72066020924
+7-505255247
 
 34271760150
 2001523146182
-MainWindow.xaml;Themes\Generic.xaml;Views\CustomList.xaml;Views\CustomMenu.xaml;Views\CustomTab.xaml;Views\CustomTextBox.xaml;Views\CustomTree.xaml;
+MainWindow.xaml;ViewModels\Generic.xaml;Views\CustomList.xaml;Views\CustomMenu.xaml;Views\CustomTab.xaml;Views\CustomTextBox.xaml;Views\CustomTree.xaml;
 
-False
+True
 

@@ -30,7 +30,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Themes\Generic.xaml">
+    <Page Update="ViewModels\Generic.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\CustomList.xaml">
