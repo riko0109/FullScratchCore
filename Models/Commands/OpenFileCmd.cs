@@ -20,7 +20,7 @@ namespace FullScratchCore.Models.Command
 
         public void Execute(object parameter)
         {
-            var Opener = new FileOpener(Encoding.Default, ControlType.CSV);
+            var Opener = new FileOpener(Encoding.Default, ControlType.Text);
             if(parameter==null)
             {
                 Opener.OpenFile();

@@ -91,3 +91,4 @@ C:\Users\H0882\source\repos\FullScratchCore\obj\Debug\netcoreapp3.1\FullScratchC
 C:\Users\H0882\source\repos\FullScratchCore\bin\Debug\netcoreapp3.1\ICSharpCode.AvalonEdit.dll
 C:\Users\H0882\source\repos\FullScratchCore\obj\Debug\netcoreapp3.1\FullScratchCore.csproj.CopyComplete
 C:\Users\H0882\source\repos\FullScratchCore\obj\Debug\netcoreapp3.1\Themes\Generic.baml
+C:\Users\Administrator\Desktop\FullScratchCore\obj\Debug\netcoreapp3.1\Themes\Generic.baml

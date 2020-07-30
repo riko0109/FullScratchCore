@@ -10,19 +10,32 @@
                 <ControlTemplate>
                     <ScrollViewer>
                         <DockPanel>
-                              <ListView DockPanel.Dock="Left" Width="40" Background="AliceBlue" BorderThickness="0" Height="Auto">
+                              <ListView DockPanel.Dock="Left" Width="40" Background="AliceBlue" BorderThickness="0" Height="Auto" Padding="0,10,0,0">
                                 <ListView.Resources>
                                     <Style TargetType="ListViewItem">
                                         <Setter Property="VerticalAlignment" Value="Center"/>
                                         <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        <Setter Property="Height" Value="35"/>
+                                        <Setter Property="FontSize" Value="15"/>
                                     </Style>
                                 </ListView.Resources>
                                 <ListViewItem Content="1"/>
                                 <ListViewItem Content="2"/>
                                 <ListViewItem Content="3"/>
                                 <ListViewItem Content="4"/>
+                                <ListViewItem Content="5"/>
+                                <ListViewItem Content="6"/>
+                                <ListViewItem Content="7"/>
+                                <ListViewItem Content="8"/>
+                                <ListViewItem Content="9"/>
+                                <ListViewItem Content="10"/>
+                                <ListViewItem Content="11"/>
+                                <ListViewItem Content="12"/>
+                                <ListViewItem Content="13"/>
+                                <ListViewItem Content="14"/>
+                                <ListViewItem Content="15"/>
                             </ListView>
-                                <TextBox Text="{TemplateBinding}" Height="Auto" BorderThickness="0" AcceptsReturn="True" />
+                                <TextBox x:Name="Editor" Height="Auto" BorderThickness="0" AcceptsReturn="True" Block.LineHeight="35" FontSize="20" Padding="20,10,0,0"/>
                         </DockPanel>
                     </ScrollViewer>
                 </ControlTemplate>

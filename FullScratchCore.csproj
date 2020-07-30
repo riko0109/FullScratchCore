@@ -12,8 +12,4 @@
     <Folder Include="Models\Interfaces\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AvalonEdit" Version="6.0.1" />
-  </ItemGroup>
-
 </Project>
