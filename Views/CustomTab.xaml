@@ -18,12 +18,11 @@
 
     <UserControl.Resources>
         <ResourceDictionary>
-            <!--  テキスト表示用テンプレート  --> 
+            <!--  テキスト表示用テンプレート  -->
             <DataTemplate x:Key="TextTemplate">
-                <Grid>
-                    <fc:FullScratchEditor Text="{Binding Contents}"/>
-                </Grid>
-                    <!-- IsAsync=TrueはupdateSourceTriggerをpropertychangedに設定してるとちらつく-->
+                <fc:FullScratchEditor Text="{Binding Contents,UpdateSourceTrigger=PropertyChanged}"/>
+                
+                <!-- IsAsync=TrueはupdateSourceTriggerをpropertychangedに設定してるとちらつく-->
                     <!--<TextBox x:Name="TextBoxControl" Grid.Column="{Binding ElementName=TextLine,Path=IsVisible}" Grid.ColumnSpan="2" Text="{Binding Contents, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"-->
                          <!--FontSize="20" Padding="10" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True" BorderThickness="0" />-->
             </DataTemplate>

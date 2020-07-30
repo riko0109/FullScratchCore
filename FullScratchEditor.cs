@@ -44,31 +44,12 @@ namespace FullScratchCore
     ///     <MyNamespace:FullScratchEditor/>
     ///
     /// </summary>
-    public class FullScratchEditor : Control
+    public class FullScratchEditor : TextBox
     {
         static FullScratchEditor()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(FullScratchEditor), new FrameworkPropertyMetadata(typeof(FullScratchEditor)));
         }
-
-        private string _Text { get; set; }
-        public string Text
-        {
-            get
-            {
-                return _Text;
-            }
-            set
-            {
-                _Text = value;
-                RaisePropertyChanged();
-                RaisePropertyChanged(nameof(_Text));
-            }
-        }
-
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register("Text", typeof(string), typeof(FullScratchEditor),
-                                        new FrameworkPropertyMetadata());
 
         public event PropertyChangedEventHandler PropertyChanged;
 
