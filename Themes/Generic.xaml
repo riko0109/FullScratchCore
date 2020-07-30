@@ -8,15 +8,15 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <ScrollViewer>
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
                         <DockPanel>
                               <ListView DockPanel.Dock="Left" Width="40" Background="AliceBlue" BorderThickness="0" Height="Auto" Padding="0,10,0,0">
                                 <ListView.Resources>
                                     <Style TargetType="ListViewItem">
                                         <Setter Property="VerticalAlignment" Value="Center"/>
                                         <Setter Property="HorizontalAlignment" Value="Center"/>
-                                        <Setter Property="Height" Value="35"/>
-                                        <Setter Property="FontSize" Value="15"/>
+                                        <Setter Property="Height" Value="40"/>
+                                            <Setter Property="FontSize" Value="15"/>
                                     </Style>
                                 </ListView.Resources>
                                 <ListViewItem Content="1"/>
@@ -31,11 +31,8 @@
                                 <ListViewItem Content="10"/>
                                 <ListViewItem Content="11"/>
                                 <ListViewItem Content="12"/>
-                                <ListViewItem Content="13"/>
-                                <ListViewItem Content="14"/>
-                                <ListViewItem Content="15"/>
                             </ListView>
-                                <TextBox x:Name="Editor" Height="Auto" BorderThickness="0" AcceptsReturn="True" Block.LineHeight="35" FontSize="20" Padding="20,10,0,0"/>
+                            <TextBox Height="Auto" BorderThickness="0" AcceptsReturn="True" Block.LineHeight="40" FontSize="25" Padding="20,10,0,0" HorizontalScrollBarVisibility="Auto"/>
                         </DockPanel>
                     </ScrollViewer>
                 </ControlTemplate>
